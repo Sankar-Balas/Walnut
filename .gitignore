@@ -1,7 +1,25 @@
 # Directories
-.vs/
+
+Debug
+.vs
+
 bin/
+
 bin-int/
 
+x64/
+bin/
+obj/
+Debug/
+Release/
+
 # Files
+
 *.user
+*.obj
+*.suo
+*.user
+*.sdf
+*.opensdf
+*.tlog
+*.log

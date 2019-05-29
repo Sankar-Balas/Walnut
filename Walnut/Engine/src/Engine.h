@@ -1,5 +1,14 @@
 #pragma once
+#include "Core.h"
 
 namespace Walnut{
-	__declspec (dllexport) void Print();
+
+	class WALNUT_API Engine
+	{
+	public:
+		Engine();
+		virtual ~Engine();
+		void RunEngine();
+	};	
+	Engine* CreateApplication();
 }

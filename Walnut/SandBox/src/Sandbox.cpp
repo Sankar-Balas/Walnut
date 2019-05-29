@@ -1,13 +1,13 @@
-#include<iostream>
-#include"sandbox.h"
+#include "Sandbox.h"
 
-namespace Walnut {
-	__declspec (dllexport) void Print();
-}
-
-int main()
+class Sandbox : public Walnut::Engine
 {
-	Walnut::Print();
-	std::getchar();
-	return 0;
+public:
+	Sandbox(){}
+	~Sandbox(){}
+};
+
+Walnut::Engine* Walnut::CreateApplication()
+{
+	return new Sandbox();
 }

@@ -3,6 +3,24 @@
 
 
 namespace Walnut{
-	void Print(){
-		std::cout << "Welcome to Walnut Engine" << std::endl;}
+
+	Engine::Engine()
+	{
+
+	}
+
+	Engine::~Engine()
+	{
+
+	}
+
+	void Engine::RunEngine()
+	{
+		std::cout << "Function Run in Engine.cpp" << std::endl;
+		while (true)
+		{
+
+		}
+
+	}
 }
