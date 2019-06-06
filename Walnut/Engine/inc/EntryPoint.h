@@ -1,8 +1,7 @@
 #pragma once
-#include "Engine.h"
 
+//defined in Client application
 extern Walnut::Engine* Walnut::CreateApplication();
-
 int main(int argc, char**argv)
 {
 	auto app = Walnut::CreateApplication();

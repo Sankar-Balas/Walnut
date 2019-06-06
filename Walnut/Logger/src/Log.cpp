@@ -1,23 +1,29 @@
 #include "Log.h"
 
+
 namespace Walnut {
+	Log* Log::m_Instance = nullptr;
 
-	Log::Log() {}
-	Log::~Log() {}
-
-	void Log::setLogLevel(LogLevel lvl)
+	Log::Log() 
 	{
-		m_Level = lvl;
+		//Empty Cons
 	}
-	Log* Log::GetLogInstance()
+	
+	Log::~Log() 
 	{
-		return nullptr;
+		//Empty Dest
 	}
-	static Log* GetLogInstance()
-	{
-		if (m_Instance == nullptr)
-			m_Instance = new Log();
 
-		return m_Instance;
+	void Log::Trace(const char * msg)
+	{
+		std::cout << "[Trace]:" << msg << std::endl;
+	}
+	void Log::Warning(const char * msg)
+	{
+		std::cout << "[Warning]:" << msg << std::endl;
+	}
+	void Log::Error(const char * msg)
+	{
+		std::cout << "[Error]:" << msg << std::endl;
 	}
 }
