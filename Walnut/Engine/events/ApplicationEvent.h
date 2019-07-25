@@ -1,7 +1,6 @@
 #pragma once
 #include "Event.h"
-#include <string>
-#include <sstream>
+#include "..\wlpch.h"
 
 namespace Walnut
 {

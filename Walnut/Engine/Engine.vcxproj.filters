@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="events">
+      <UniqueIdentifier>{5A9D08FC-463F-33D2-2FFA-46261B3BBA22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{1F80880B-8B89-887C-1405-9F7C800D947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h" />
+    <ClInclude Include="events\ApplicationEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\Event.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\KeyEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="events\MouseEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Core.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Engine.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\EntryPoint.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="wlpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="wlpch.cpp" />
+  </ItemGroup>
+</Project>

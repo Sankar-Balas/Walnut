@@ -14,19 +14,24 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "Engine"
 	location "Engine"
-	kind "StaticLib"
+	kind "SharedLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-obj/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "wlpch.h"
+	pchsource "Engine/wlpch.cpp"
 
 	files
 	{
 		"%{prj.name}/inc/**.h",
+		"%{prj.name}/events/**.h",
 		"%{prj.name}/src/**.cpp",
-		"%{prj.name}/**.h"
+		"%{prj.name}/**.h",
+		"%{prj.name}/**.cpp"
 	}
 
 	includedirs

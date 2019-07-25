@@ -1,7 +1,8 @@
 #pragma once
 
-#include "..\inc\Core.h"
-#include<string>
+#include "Core.h"
+#include "..\wlpch.h"
+
 
 namespace Walnut
 {
