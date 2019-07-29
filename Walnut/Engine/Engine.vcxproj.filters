@@ -10,6 +10,39 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW">
+      <UniqueIdentifier>{D27667C1-3E2C-E0B6-C720-DA8D33D5D6BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps">
+      <UniqueIdentifier>{2D9CE7E7-1995-063A-42C7-EBBE2E1FE645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\KHR">
+      <UniqueIdentifier>{21F99E8D-0D88-2857-B6A6-3C52A21439FD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\glad">
+      <UniqueIdentifier>{54138E41-C07F-493C-8973-E199F59E6BA4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\mingw">
+      <UniqueIdentifier>{DEA3BB73-CA9D-E4C5-B30A-7BD69FA34A32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\vs2008">
+      <UniqueIdentifier>{AFA8C100-1BE0-0998-24EA-6DBB90A03091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\vulkan">
+      <UniqueIdentifier>{2DA90601-99E0-4E98-A2EA-B2BB0EA17591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\include">
+      <UniqueIdentifier>{45501F1D-B1B1-FC2A-3A1F-43DDA67F33EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\include\GLFW">
+      <UniqueIdentifier>{A4FE9F69-9023-EFE9-B96E-D479A5F2ED07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\src">
+      <UniqueIdentifier>{E94D2683-55D9-9347-5EEA-163CCAF4EF47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
@@ -33,6 +66,114 @@
     </ClInclude>
     <ClInclude Include="inc\EntryPoint.h">
       <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\KHR\khrplatform.h">
+      <Filter>vendor\GLFW\deps\KHR</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\getopt.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\glad\glad.h">
+      <Filter>vendor\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\linmath.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\mingw\_mingw_dxhelper.h">
+      <Filter>vendor\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\mingw\dinput.h">
+      <Filter>vendor\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\mingw\xinput.h">
+      <Filter>vendor\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\nuklear.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\nuklear_glfw_gl2.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\stb_image_write.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\tinycthread.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\vs2008\stdint.h">
+      <Filter>vendor\GLFW\deps\vs2008</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\vulkan\vk_platform.h">
+      <Filter>vendor\GLFW\deps\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\vulkan\vulkan.h">
+      <Filter>vendor\GLFW\deps\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\vulkan\vulkan_core.h">
+      <Filter>vendor\GLFW\deps\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h">
+      <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h">
+      <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\cocoa_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\cocoa_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\egl_context.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\glx_context.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\internal.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\linux_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\mappings.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\nsgl_context.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\null_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\null_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\osmesa_context.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\posix_thread.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\posix_time.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\wgl_context.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\win32_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\win32_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\wl_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\x11_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\xkb_unicode.h">
+      <Filter>vendor\GLFW\src</Filter>
     </ClInclude>
     <ClInclude Include="wlpch.h" />
   </ItemGroup>

@@ -23,14 +23,9 @@ namespace Walnut
 	{
 	public:			
 		KeyPressedEvent(int keyCode) :KeyEvent(keyCode) {}
-		EventType GetEventType() const override{ 
-			return EventType::KeyPressed;
-		}
-		
-		const char* GetName() const override {
-			return "KeyPressed";
-		}		
-		
+		EventType GetEventType() const override { return GetStaticType(); }
+		const char* GetName() const override {return "KeyPressed";}				
+		static EventType GetStaticType() { return EventType::KeyPressed; }
 		std::string ToStringPlease() const override
 		{
 			std::stringstream os;
@@ -43,13 +38,9 @@ namespace Walnut
 	{
 	public:
 		KeyReleasedEvent(int KeyCode) :KeyEvent(KeyCode) {}
-		EventType GetEventType() const override {
-			return EventType::KeyReleased;
-		}
-		const char* GetName() const override {
-			return "Key Released";
-		}
-
+		EventType GetEventType() const override { return GetStaticType();}
+		const char* GetName() const override { return "Key Released";}
+		static EventType GetStaticType() { return EventType::KeyReleased; }
 		std::string ToStringPlease() const override
 		{
 			std::stringstream ss;
@@ -62,11 +53,9 @@ namespace Walnut
 	{
 	public:
 		KeyTypedEvent(int keycode) :KeyEvent(keycode) {}		
-		EventType GetEventType() const override {
-			return EventType::KeyTyped;}
-		
-		const char* GetName() const override {
-			return "KeyTypedEvent";}
+		EventType GetEventType() const override {return GetStaticType();}
+		const char* GetName() const override {return "KeyTypedEvent";}
+		static EventType GetStaticType() { return EventType::KeyTyped; }
 
 		std::string ToStringPlease() const override
 		{

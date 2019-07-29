@@ -11,6 +11,9 @@ workspace "Walnut"
 
 --outputdir =  Debug/Windows/X64 or x 32
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+IncludeDir = {}
+IncludeDir["GLFW"] = "Walnut/Engine/vendor/GLFW/include"
+include "Engine/vendor/GLFW"
 
 project "Engine"
 	location "Engine"
@@ -36,7 +39,13 @@ project "Engine"
 
 	includedirs
 	{
-		"$(SolutionDir)Engine/inc"
+		"$(SolutionDir)Engine/inc",
+		"%{IncludeDir.GLFW}"
+	}
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

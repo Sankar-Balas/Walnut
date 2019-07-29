@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>wlpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WL_PLATFORM_WINDOWS;WL_BUILD_DLL;WL_DYNAMIC_LINK;WL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Engine\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Engine\inc;..\Walnut\Engine\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -89,6 +89,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Engine\Engine.lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
@@ -98,7 +99,7 @@
       <PrecompiledHeaderFile>wlpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WL_PLATFORM_WINDOWS;WL_BUILD_DLL;WL_DYNAMIC_LINK;WL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\inc;..\Walnut\Engine\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -111,6 +112,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\Engine\Engine.lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
@@ -120,7 +122,7 @@
       <PrecompiledHeaderFile>wlpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WL_PLATFORM_WINDOWS;WL_BUILD_DLL;WL_DYNAMIC_LINK;WL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\inc;..\Walnut\Engine\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -133,6 +135,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Engine\Engine.lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
@@ -145,6 +148,42 @@
     <ClInclude Include="inc\Core.h" />
     <ClInclude Include="inc\Engine.h" />
     <ClInclude Include="inc\EntryPoint.h" />
+    <ClInclude Include="vendor\GLFW\deps\KHR\khrplatform.h" />
+    <ClInclude Include="vendor\GLFW\deps\getopt.h" />
+    <ClInclude Include="vendor\GLFW\deps\glad\glad.h" />
+    <ClInclude Include="vendor\GLFW\deps\linmath.h" />
+    <ClInclude Include="vendor\GLFW\deps\mingw\_mingw_dxhelper.h" />
+    <ClInclude Include="vendor\GLFW\deps\mingw\dinput.h" />
+    <ClInclude Include="vendor\GLFW\deps\mingw\xinput.h" />
+    <ClInclude Include="vendor\GLFW\deps\nuklear.h" />
+    <ClInclude Include="vendor\GLFW\deps\nuklear_glfw_gl2.h" />
+    <ClInclude Include="vendor\GLFW\deps\stb_image_write.h" />
+    <ClInclude Include="vendor\GLFW\deps\tinycthread.h" />
+    <ClInclude Include="vendor\GLFW\deps\vs2008\stdint.h" />
+    <ClInclude Include="vendor\GLFW\deps\vulkan\vk_platform.h" />
+    <ClInclude Include="vendor\GLFW\deps\vulkan\vulkan.h" />
+    <ClInclude Include="vendor\GLFW\deps\vulkan\vulkan_core.h" />
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="vendor\GLFW\src\cocoa_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\cocoa_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\egl_context.h" />
+    <ClInclude Include="vendor\GLFW\src\glx_context.h" />
+    <ClInclude Include="vendor\GLFW\src\internal.h" />
+    <ClInclude Include="vendor\GLFW\src\linux_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\mappings.h" />
+    <ClInclude Include="vendor\GLFW\src\nsgl_context.h" />
+    <ClInclude Include="vendor\GLFW\src\null_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\null_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\osmesa_context.h" />
+    <ClInclude Include="vendor\GLFW\src\posix_thread.h" />
+    <ClInclude Include="vendor\GLFW\src\posix_time.h" />
+    <ClInclude Include="vendor\GLFW\src\wgl_context.h" />
+    <ClInclude Include="vendor\GLFW\src\win32_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\win32_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\wl_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\x11_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\xkb_unicode.h" />
     <ClInclude Include="wlpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +191,11 @@
     <ClCompile Include="wlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

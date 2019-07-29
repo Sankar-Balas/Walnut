@@ -23,3 +23,7 @@ Release/
 *.opensdf
 *.tlog
 *.log
+*.filters
+*.pdb
+*.idb
+*.pch

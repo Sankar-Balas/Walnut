@@ -20,8 +20,10 @@ namespace Walnut
 	{
 	public:
 		MouseButtonPressed(int button) : MouseButtonEvent(button) {}	
-		virtual EventType GetEventType() const override { return EventType::MouseButtonPressed; }
+		virtual EventType GetEventType() const override { return GetStaticType(); }
 		virtual const char* GetName() const override { return "MouseButtonPresses"; }		
+		static EventType GetStaticType() { return EventType::MouseButtonPressed; }
+		
 		virtual inline std::string ToStringPlease()
 		{
 			std::stringstream ss;
@@ -34,8 +36,9 @@ namespace Walnut
 	{
 	public:
 		MouseButtonReleased(int button) :MouseButtonEvent(button) {}
-		virtual EventType GetEventType()const override { return EventType::MouseButtonReleased; }
+		virtual EventType GetEventType()const override { return GetStaticType(); }
 		virtual const char* GetName() const override { return "MouseButtonReleased"; }		
+		static EventType GetStaticType() {return EventType::MouseButtonReleased;}
 		virtual inline std::string ToStringPlease()
 		{
 			std::stringstream ss;
@@ -60,8 +63,10 @@ namespace Walnut
 			ss << "MouseScrolled Event Position" << getXposition() << getYposition() << std::endl;
 			return ss.str();
 		}
-		virtual EventType GetEventType() { return EventType::MouseScrolled; }
+		virtual EventType GetEventType() { return GetStaticType(); }
 		virtual const char* GetName() { return "MouseScroll"; }
+		static EventType GetStaticType() { return EventType::MouseScrolled; }
+
 	};
 	
 	class WALNUT_API MouseMoved :public Event
@@ -84,7 +89,8 @@ namespace Walnut
 			return ss.str();
 		}
 
-		virtual EventType GetEventType() { return EventType::MouseMoved; }
+		virtual EventType GetEventType() { return GetStaticType(); }
+		static EventType GetStaticType() { return EventType::MouseMoved; }
 		virtual const char* GetName() { return "MouseMove"; }
 	};
 }

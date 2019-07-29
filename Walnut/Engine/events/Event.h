@@ -27,21 +27,49 @@ namespace Walnut
 
 #define EVENT_CATEGORY(category) virtual int GetEventCategory() const override {return category;}
 #define EVENT_TYPE(type)	virtual EventType GetEventType() const override {return EventType::##type;}\
-							virtual const char* GetName() const override {return #type;}
+							virtual const char* GetName() const override {return #type;}\
+							static EventType GetStaticType() { return EventType::##type; }
 
 
 	class WALNUT_API Event
 	{
+		friend class EventDispatcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual int GetEventCategory() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual std::string ToStringPlease() const { return GetName(); }
 		inline bool IsIncategory(EventCategory EvnCategory) { return GetEventCategory() & EvnCategory; }
+	private:
+		bool m_handled = false;
+	};
+
+	class EventDispatcher 
+	{
+	public:
+		template<typename T>
+		using EventFunc = std::function<bool(T&)>;		
+		EventDispatcher(Event& event) :m_event(event) {}
+
+		template<typename T>
+		bool dispatch(EventFunc <T> func)
+		{
+			if (m_event.GetEventType == T::GetStaticType())
+			{
+				m_Event.m_Handled = func(*(T*)&m_Event);
+				return true;
+			}
+			return false;
+		}
+
+	private:
+		Event &m_event;
 	};
 
 	inline std::ostream& operator <<(std::ostream& ss, const Event& e) 
 	{
 		return ss << e.ToStringPlease();
 	}
+
+	
 }

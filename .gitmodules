@@ -1,0 +1,3 @@
+[submodule "Walnut/Engine/vendor"]
+	path = Walnut/Engine/vendor
+	url = https://github.com/Sankar-Balas/glfw
