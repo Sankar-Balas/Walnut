@@ -148,6 +148,7 @@
     <ClInclude Include="inc\Core.h" />
     <ClInclude Include="inc\Engine.h" />
     <ClInclude Include="inc\EntryPoint.h" />
+    <ClInclude Include="PfmWindows.h" />
     <ClInclude Include="vendor\GLFW\deps\KHR\khrplatform.h" />
     <ClInclude Include="vendor\GLFW\deps\getopt.h" />
     <ClInclude Include="vendor\GLFW\deps\glad\glad.h" />
@@ -184,15 +185,20 @@
     <ClInclude Include="vendor\GLFW\src\wl_platform.h" />
     <ClInclude Include="vendor\GLFW\src\x11_platform.h" />
     <ClInclude Include="vendor\GLFW\src\xkb_unicode.h" />
+    <ClInclude Include="Window.h" />
     <ClInclude Include="wlpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PfmWindows.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="wlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logger\Logger.vcxproj">
+      <Project>{25f339c1-1195-6497-fa4f-78ebe690ebe7}</Project>
+    </ProjectReference>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>

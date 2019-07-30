@@ -43,6 +43,9 @@
     <Filter Include="vendor\GLFW\src">
       <UniqueIdentifier>{E94D2683-55D9-9347-5EEA-163CCAF4EF47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{256a4bc7-dba0-4c58-80f8-d3143068196d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common.h" />
@@ -176,11 +179,18 @@
       <Filter>vendor\GLFW\src</Filter>
     </ClInclude>
     <ClInclude Include="wlpch.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="PfmWindows.h">
+      <Filter>platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="wlpch.cpp" />
+    <ClCompile Include="PfmWindows.cpp">
+      <Filter>platform</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
