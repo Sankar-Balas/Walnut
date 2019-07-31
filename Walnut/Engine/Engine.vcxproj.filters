@@ -44,11 +44,19 @@
       <UniqueIdentifier>{E94D2683-55D9-9347-5EEA-163CCAF4EF47}</UniqueIdentifier>
     </Filter>
     <Filter Include="platform">
-      <UniqueIdentifier>{256a4bc7-dba0-4c58-80f8-d3143068196d}</UniqueIdentifier>
+      <UniqueIdentifier>{132d3994-f832-41cd-a4d1-4308f1b1b0da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\windows">
+      <UniqueIdentifier>{0a4be7c8-2290-41bb-bace-bd64ec6bfcd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{0afc55c7-ff31-44aa-916b-da73aa7c81c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\inc">
+      <UniqueIdentifier>{798aeb13-1808-4987-adda-5c9616233b02}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
     <ClInclude Include="events\ApplicationEvent.h">
       <Filter>events</Filter>
     </ClInclude>
@@ -178,19 +186,25 @@
     <ClInclude Include="vendor\GLFW\src\xkb_unicode.h">
       <Filter>vendor\GLFW\src</Filter>
     </ClInclude>
-    <ClInclude Include="wlpch.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="PfmWindows.h">
-      <Filter>platform</Filter>
+    <ClInclude Include="platform\windows\PfmWindows.h">
+      <Filter>platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\inc\common.h">
+      <Filter>common\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\inc\Window.h">
+      <Filter>common\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\inc\wlpch.h">
+      <Filter>common\inc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="wlpch.cpp" />
-    <ClCompile Include="PfmWindows.cpp">
-      <Filter>platform</Filter>
+    <ClCompile Include="..\common\inc\wlpch.cpp">
+      <Filter>common\inc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

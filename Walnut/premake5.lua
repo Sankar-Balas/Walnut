@@ -26,10 +26,11 @@ project "Engine"
 	objdir ("bin-obj/" .. outputdir .. "/%{prj.name}")
 	
 	pchheader "wlpch.h"
-	pchsource "Engine/wlpch.cpp"
+	pchsource "common/inc/wlpch.cpp"
 
 	files
 	{
+		"%{prj.name}/platform/windows/**",
 		"%{prj.name}/inc/**.h",
 		"%{prj.name}/events/**.h",
 		"%{prj.name}/src/**.cpp",

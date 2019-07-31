@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>wlpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WL_PLATFORM_WINDOWS;WL_BUILD_DLL;WL_DYNAMIC_LINK;WL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine;$(SolutionDir)Engine\inc;..\Walnut\Engine\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutiondir)common\inc;$(solutiondir)engine\inc;$(solutiondir)engine\vendor\GLFW\include\GLFW;$(solutiondir)engine\events;$(Solutiondir)logger\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -92,6 +92,10 @@
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Engine\Engine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>XCOPY /Y "$(OutDir)*$(ProjectName).dll" "$(solutiondir)bin\Debug-windows-x86_64\SandBox\"
+XCOPY /Y "$(OutDir)*$(ProjectName).lib" "$(solutiondir)bin\Debug-windows-x86_64\SandBox\"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -140,7 +144,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
+    <ClInclude Include="..\common\inc\common.h" />
+    <ClInclude Include="..\common\inc\Window.h" />
+    <ClInclude Include="..\common\inc\wlpch.h" />
     <ClInclude Include="events\ApplicationEvent.h" />
     <ClInclude Include="events\Event.h" />
     <ClInclude Include="events\KeyEvent.h" />
@@ -148,7 +154,7 @@
     <ClInclude Include="inc\Core.h" />
     <ClInclude Include="inc\Engine.h" />
     <ClInclude Include="inc\EntryPoint.h" />
-    <ClInclude Include="PfmWindows.h" />
+    <ClInclude Include="platform\windows\PfmWindows.h" />
     <ClInclude Include="vendor\GLFW\deps\KHR\khrplatform.h" />
     <ClInclude Include="vendor\GLFW\deps\getopt.h" />
     <ClInclude Include="vendor\GLFW\deps\glad\glad.h" />
@@ -185,13 +191,10 @@
     <ClInclude Include="vendor\GLFW\src\wl_platform.h" />
     <ClInclude Include="vendor\GLFW\src\x11_platform.h" />
     <ClInclude Include="vendor\GLFW\src\xkb_unicode.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="wlpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PfmWindows.cpp" />
     <ClCompile Include="src\Engine.cpp" />
-    <ClCompile Include="wlpch.cpp">
+    <ClCompile Include="..\common\inc\wlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>

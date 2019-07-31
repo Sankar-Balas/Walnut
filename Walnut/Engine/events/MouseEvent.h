@@ -1,7 +1,7 @@
 #pragma once
 
+#include "wlpch.h"
 #include "Event.h"
-#include "..\wlpch.h"
 
 
 namespace Walnut

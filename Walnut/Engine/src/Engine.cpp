@@ -1,8 +1,6 @@
 #include "wlpch.h"
 #include "Engine.h"
-
-#include "..\events\ApplicationEvent.h"
-#include "..\Logger\inc\Log.h"
+#include "ApplicationEvent.h"
 
 namespace Walnut{
 
@@ -21,12 +19,10 @@ namespace Walnut{
 		WindowResizeEvent e(10, 20);
 		if (e.IsIncategory(EventcategoryApplication))
 		{
-			WL_CORE_TRACE("I m from RunEngine - EventcategoryApplication");
-		}
-		std::cout << "Function Run in Engine.cpp" << std::endl;
+			WL_CORE_TRACE("Inside RunEngine");			
+		}		
 		while (true)
 		{
-
 		}
 
 	}

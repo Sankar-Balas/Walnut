@@ -1,5 +1,13 @@
 #pragma once
 #include "Core.h"
+#include <string>
+#include <iostream>
+
+#ifdef  WL_PLATFORM_WINDOWS
+	#include <Windows.h>
+#endif //  WL_PLATFORM_WINDOWS
+
+
 
 namespace Walnut {
 
