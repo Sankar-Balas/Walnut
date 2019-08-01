@@ -11,8 +11,7 @@
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
-#include "glfw3.h"
-#include "Log.h"
+
 
 #ifdef WL_PLATFORM_WINDOWS
 	#include <Windows.h>

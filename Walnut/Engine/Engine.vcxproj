@@ -193,6 +193,7 @@ XCOPY /Y "$(OutDir)*$(ProjectName).lib" "$(solutiondir)bin\Debug-windows-x86_64\
     <ClInclude Include="vendor\GLFW\src\xkb_unicode.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="platform\windows\PfmWindows.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="..\common\inc\wlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

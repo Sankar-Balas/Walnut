@@ -1,9 +1,8 @@
 #pragma once
 
-#include <wlpch.h>
-#include "common.h"
+#include "wlpch.h"
 #include "Core.h"
-#include "Event.h"
+#include "..\events\Event.h"
 
 namespace Walnut
 {
@@ -30,8 +29,7 @@ namespace Walnut
 		virtual unsigned int GetWindowWidth() const = 0;
 		virtual void SetVSync(bool enabled)  = 0;
 		virtual bool IsVSync() const = 0;
-		virtual void SetEventCallback( EventCallbackFunc& event ) = 0;
-		Window() {}
+		virtual void SetEventCallback( EventCallbackFunc& event ) = 0;		
 		virtual ~Window() {}
 		static Window* Create(WindowProperty& wp = WindowProperty());
 	};

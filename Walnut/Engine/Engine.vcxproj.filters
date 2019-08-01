@@ -206,5 +206,8 @@
     <ClCompile Include="..\common\inc\wlpch.cpp">
       <Filter>common\inc</Filter>
     </ClCompile>
+    <ClCompile Include="platform\windows\PfmWindows.cpp">
+      <Filter>platform\windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

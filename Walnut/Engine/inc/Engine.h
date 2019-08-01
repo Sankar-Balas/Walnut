@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "Window.h"
 
 namespace Walnut{
 
@@ -10,6 +11,7 @@ namespace Walnut{
 		Engine();
 		virtual ~Engine();
 		void RunEngine();
+		std::unique_ptr<Window>m_Window;
 	};	
 	Engine* CreateApplication();
 }

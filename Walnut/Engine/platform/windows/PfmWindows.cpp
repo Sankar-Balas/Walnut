@@ -1,6 +1,9 @@
+#pragma once
 
 #include "wlpch.h"
 #include "PfmWindows.h"
+#include "glfw3.h"
+#include "Log.h"
 
 namespace Walnut
 {
@@ -31,10 +34,10 @@ namespace Walnut
 		if (!isGLFWinitiated)
 		{
 			int success = glfwInit();
-			if (success)
-				std::cout << "Good" << std::endl;
+			if (success) 
+				WL_CORE_TRACE("glfw initiated well");			
 			else
-				std::cout << "bad" << std::endl;
+				WL_CORE_ERROR("glfw not initiated well");
 			
 			isGLFWinitiated = true;
 		}
@@ -48,6 +51,7 @@ namespace Walnut
 	{
 		glfwDestroyWindow(m_glfWindow);
 	}
+
 	void PfmWindows::SetVSync(bool enabled)
 	{
 		if (enabled)
@@ -62,5 +66,4 @@ namespace Walnut
 	{
 		return m_WindowData.VSync;
 	}
-
 }
