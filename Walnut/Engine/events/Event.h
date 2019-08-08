@@ -46,24 +46,25 @@ namespace Walnut
 
 	class EventDispatcher 
 	{
+	private:
+		Event &m_event;
 	public:
 		template<typename T>
 		using EventFunc = std::function<bool(T&)>;		
 		EventDispatcher(Event& event) :m_event(event) {}
 
 		template<typename T>
-		bool dispatch(EventFunc <T> func)
+		bool dispatchtoEvent(EventFunc <T> func)
 		{
-			if (m_event.GetEventType == T::GetStaticType())
+			if (m_event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_event.m_handled = func(*(T*)&m_event);
 				return true;
 			}
 			return false;
 		}
 
-	private:
-		Event &m_event;
+
 	};
 
 	inline std::ostream& operator <<(std::ostream& ss, const Event& e) 

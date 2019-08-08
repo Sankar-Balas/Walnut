@@ -34,7 +34,7 @@ namespace Walnut
 		WindowCloseEvent() {}
 		virtual inline EventType GetEventType() const override { return  GetStaticType(); }
 		virtual inline int GetEventCategory() const override { return EventCategory::EventcategoryApplication; }
-		virtual inline const char* GetName() { return "WindowClose"; }
+		virtual inline const char* GetName()const override { return "WindowClose"; }
 		static EventType GetStaticType() {return EventType::WindowClose;}
 		virtual inline std::string ToStringPlease() 
 		{

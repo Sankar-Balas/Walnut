@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Window.h"
+#include "..\events\ApplicationEvent.h"
 
 namespace Walnut{
 
@@ -12,6 +13,10 @@ namespace Walnut{
 		virtual ~Engine();
 		void RunEngine();
 		std::unique_ptr<Window>m_Window;
+		void onEvent(Event &e);
+		bool OnWindowClose(WindowCloseEvent &);
+		static bool m_isCodeRunning;
 	};	
 	Engine* CreateApplication();
+
 }

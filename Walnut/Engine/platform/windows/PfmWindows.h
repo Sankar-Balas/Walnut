@@ -1,6 +1,7 @@
 #pragma once
 #include "Window.h"
 #include "glfw3.h"
+#include "..\events\ApplicationEvent.h"
 
 namespace Walnut
 {
@@ -17,7 +18,7 @@ namespace Walnut
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
 
-		inline void SetEventCallback(EventCallbackFunc& event) override { m_WindowData.EventCallback = event; }
+		inline void SetEventCallback(const EventCallbackFunc& event) override { m_WindowData.EventCallback = event; }
 
 
 		struct WindowData

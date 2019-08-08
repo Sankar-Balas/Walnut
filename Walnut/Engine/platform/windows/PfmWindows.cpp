@@ -45,6 +45,14 @@ namespace Walnut
 		glfwMakeContextCurrent(m_glfWindow);
 		glfwSetWindowUserPointer(m_glfWindow, &m_WindowData);
 		SetVSync(true);
+
+		glfwSetWindowCloseCallback(m_glfWindow, [](GLFWwindow* window)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+			WindowCloseEvent event;
+			data.EventCallback(event);
+		});
+
 	}
 
 	void PfmWindows::ShutdownPlease()
