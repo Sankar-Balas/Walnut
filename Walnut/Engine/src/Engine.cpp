@@ -36,12 +36,22 @@ namespace Walnut{
 	void Engine::onEvent(Event &e)
 	{
 		EventDispatcher dispatchMe(e);
-		dispatchMe.dispatchtoEvent<WindowCloseEvent>(Event_Callbk_Fn(OnWindowClose));
+		switch (e.GetEventType())
+		{
+		case EventType::WindowClose:
+			dispatchMe.dispatchtoEvent<WindowCloseEvent>(Event_Callbk_Fn(OnWindowClose));
+			break;
+		case EventType::MouseButtonPressed:
+			std::cout << "Some how understood" << std::endl;
+			break;
+		}
+		
+		//std::cout << e.ToStringPlease() << std::endl;
 	}
 
 	bool Engine::OnWindowClose(WindowCloseEvent &wce)
 	{
 		m_isCodeRunning = false;
-		return false;
+		return true;
 	}	
 }

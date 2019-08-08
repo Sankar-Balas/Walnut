@@ -2,6 +2,7 @@
 #include "Window.h"
 #include "glfw3.h"
 #include "..\events\ApplicationEvent.h"
+#include "..\events\MouseEvent.h"
 
 namespace Walnut
 {

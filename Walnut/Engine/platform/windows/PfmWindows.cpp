@@ -53,6 +53,26 @@ namespace Walnut
 			data.EventCallback(event);
 		});
 
+		glfwSetMouseButtonCallback(m_glfWindow, [](GLFWwindow* window,int button,int action,int mods)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			switch (action)
+			{
+				case GLFW_PRESS:
+				{
+					MouseButtonPressed mbpe(button);
+					data.EventCallback(mbpe);
+					break;
+				}
+				case GLFW_RELEASE:
+				{
+					MouseButtonReleased mbre(button);
+					data.EventCallback(mbre);
+					break;
+				}			
+			}
+		});
 	}
 
 	void PfmWindows::ShutdownPlease()

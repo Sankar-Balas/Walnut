@@ -14,14 +14,9 @@ namespace Walnut
 		WindowResizeEvent(float height, float width) :m_Height(height), m_Width(width) {}
 		virtual EventType GetEventType() const override { return GetStaticType(); }
 		virtual int GetEventCategory() const override { return EventCategory::EventcategoryApplication; }
-		virtual const char* GetName() const override { return "WindowResize"; }
-		
-
+		virtual const char* GetName() const override { return "WindowResize"; }		
 		static EventType GetStaticType() { return EventType::WindowResize; }
-		//EVENT_CATEGORY(EventcategoryApplication)
-		//EVENT_TYPE(WindowResize)
-							
-							
+			
 
 		inline float GetHeight()const { return m_Height; }
 		inline float GetWidth()const { return m_Width; }
