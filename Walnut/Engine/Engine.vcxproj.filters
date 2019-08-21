@@ -198,6 +198,12 @@
     <ClInclude Include="..\common\inc\wlpch.h">
       <Filter>common\inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\Layer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\LayerStack.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp">
@@ -208,6 +214,12 @@
     </ClCompile>
     <ClCompile Include="platform\windows\PfmWindows.cpp">
       <Filter>platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LayerStack.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -83,7 +83,7 @@
       <AdditionalIncludeDirectories>$(solutiondir)common\inc;$(solutiondir)engine\inc;$(solutiondir)engine\vendor\GLFW\include\GLFW;$(solutiondir)engine\events;$(Solutiondir)logger\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -154,6 +154,8 @@ XCOPY /Y "$(OutDir)*$(ProjectName).lib" "$(solutiondir)bin\Debug-windows-x86_64\
     <ClInclude Include="inc\Core.h" />
     <ClInclude Include="inc\Engine.h" />
     <ClInclude Include="inc\EntryPoint.h" />
+    <ClInclude Include="inc\Layer.h" />
+    <ClInclude Include="inc\LayerStack.h" />
     <ClInclude Include="platform\windows\PfmWindows.h" />
     <ClInclude Include="vendor\GLFW\deps\KHR\khrplatform.h" />
     <ClInclude Include="vendor\GLFW\deps\getopt.h" />
@@ -198,6 +200,8 @@ XCOPY /Y "$(OutDir)*$(ProjectName).lib" "$(solutiondir)bin\Debug-windows-x86_64\
     <ClCompile Include="..\common\inc\wlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Layer.cpp" />
+    <ClCompile Include="src\LayerStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logger\Logger.vcxproj">

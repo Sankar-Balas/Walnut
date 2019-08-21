@@ -35,13 +35,12 @@ namespace Walnut
 	{
 		friend class EventDispatcher;
 	public:
+		bool m_handled = false;
 		virtual EventType GetEventType() const = 0;
 		virtual int GetEventCategory() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual std::string ToStringPlease() const { return GetName(); }
 		inline bool IsIncategory(EventCategory EvnCategory) { return GetEventCategory() & EvnCategory; }
-	private:
-		bool m_handled = false;
 	};
 
 	class EventDispatcher 

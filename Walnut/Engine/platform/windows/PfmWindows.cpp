@@ -73,6 +73,30 @@ namespace Walnut
 				}			
 			}
 		});
+		
+		glfwSetKeyCallback(m_glfWindow, [](GLFWwindow* window, int keyboardKey, int scancode, int action, int mods)
+		{
+			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+			switch (action)
+			{
+			case GLFW_PRESS: {
+				KeyPressedEvent kpe(keyboardKey);
+				data.EventCallback(kpe);
+				break; }
+
+			case GLFW_RELEASE: {
+				KeyReleasedEvent kre(keyboardKey);
+				data.EventCallback(kre);
+				break; }
+
+			case GLFW_REPEAT: {
+				KeyTypedEvent kte(keyboardKey);
+				data.EventCallback(kte);
+				break; }
+			}
+		});		
+		
 	}
 
 	void PfmWindows::ShutdownPlease()

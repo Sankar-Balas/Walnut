@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "Window.h"
 #include "..\events\ApplicationEvent.h"
+#include "LayerStack.h"
 
 namespace Walnut{
 
@@ -16,6 +17,14 @@ namespace Walnut{
 		void onEvent(Event &e);
 		bool OnWindowClose(WindowCloseEvent &);
 		static bool m_isCodeRunning;
+
+		void PushLayer(Layer *layer);
+		void PopLayer(Layer *layer);
+		void PushOverlayLayer(Layer *layer);
+		void PullOverlayLayer(Layer *layer);
+
+		LayerStack m_Layerstack;
+
 	};	
 	Engine* CreateApplication();
 
