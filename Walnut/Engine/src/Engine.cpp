@@ -5,6 +5,7 @@
 #include "ApplicationEvent.h"
 #include "Log.h"
 #include "glfw3.h"
+#include <memory>
 
 namespace Walnut{
 
@@ -24,6 +25,23 @@ namespace Walnut{
 	}	
 
 
+	void Engine::PushLayer(Layer *layer)
+	{
+		m_Layerstack.PushLayer(layer);
+	}
+	void Engine::PopLayer(Layer *layer)
+	{
+		m_Layerstack.PopLayer(layer);
+	}
+	void Engine::PushOverlayLayer(Layer *layer)
+	{
+		m_Layerstack.PushOverlayLayer(layer);
+	}
+	void Engine::PullOverlayLayer(Layer *layer)
+	{
+		m_Layerstack.PullOverlayLayer(layer);
+	}
+
 	void Engine::RunEngine()
 	{			
 		while (m_isCodeRunning)
@@ -38,18 +56,12 @@ namespace Walnut{
 			m_Window->OnUpdate();
 		}
 
-	}
+	}	
+
 	void Engine::onEvent(Event &e)
 	{
 		EventDispatcher dispatchMe(e);
-
-		for (auto it = m_Layerstack.m_Layerlist.end(); it != m_Layerstack.m_Layerlist.begin();it--)
-		{
-			(**it).onLayerEvent(e);
-
-			if (e.m_handled == true)
-				break;
-		}
+		
 		switch (e.GetEventType())
 		{
 		case EventType::WindowClose:
@@ -71,6 +83,36 @@ namespace Walnut{
 			std::cout << e.ToStringPlease() << std::endl;
 			break;
 		}
+
+		for (auto it = m_Layerstack.m_Layerlist.end()-1; it != m_Layerstack.m_Layerlist.begin(); it--)
+		{			
+			(**it).onLayerEvent(e);
+
+			if (e.m_handled == true)
+				break;
+
+			
+			/*std::unique_ptr<Engine>eng = std::make_unique<Engine>();
+			std::unique_ptr<Engine>fr = std::make_unique<Engine>();			
+			std::shared_ptr<Engine> eng1(new Engine());
+			std::shared_ptr<Engine> gg2 = std::make_shared<engine>();
+
+			std::weak_ptr<Engine> ee = std::make_s
+
+			int i = 90;
+			int j = 902;
+
+			
+			int const* pt2  = &i;			
+			int* const pt3  = &i;
+
+			
+			ptr = const_cast<int> pt2;
+			*/
+
+
+		}
+
 		
 	}
 
@@ -80,20 +122,4 @@ namespace Walnut{
 		return true;
 	}	
 
-	void  Engine::PushLayer(Layer *layer)
-	{
-		m_Layerstack.PushLayer(layer);
-	}
-	void  Engine::PopLayer(Layer *layer)
-	{
-		m_Layerstack.PopLayer(layer);
-	}
-	void  Engine::PushOverlayLayer(Layer *layer)
-	{
-		m_Layerstack.PushOverlayLayer(layer);
-	}
-	void  Engine::PullOverlayLayer(Layer *layer)
-	{
-		m_Layerstack.PullOverlayLayer(layer);
-	}
 }

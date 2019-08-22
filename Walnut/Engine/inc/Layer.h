@@ -1,12 +1,12 @@
 #pragma once
-#include "Event.h"
+#include "..\events\Event.h"
 
 namespace Walnut {
 	class Layer
 	{
 	public:
 		Layer(const std::string layername = "Layer" , bool isEnabled =true) { m_Layername = layername , m_IsEnabled = isEnabled; }
-		virtual ~Layer();
+		virtual ~Layer() {};
 
 
 		virtual void attachLayer() {}
