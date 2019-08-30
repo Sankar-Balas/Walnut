@@ -4,8 +4,7 @@
 #include "Engine.h"
 #include "ApplicationEvent.h"
 #include "Log.h"
-#include "glfw3.h"
-#include <memory>
+#include <GLFW/glfw3.h>
 
 namespace Walnut{
 
@@ -46,8 +45,8 @@ namespace Walnut{
 	{			
 		while (m_isCodeRunning)
 		{
-			glClearColor(1, 0, 1, 1);
-			glClear(GL_COLOR_BUFFER_BIT);
+			//glClearColor(1, 0, 1, 1);
+			//glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_Layerstack.m_Layerlist) {
 				layer->refershLayer();
@@ -90,30 +89,7 @@ namespace Walnut{
 
 			if (e.m_handled == true)
 				break;
-
-			
-			/*std::unique_ptr<Engine>eng = std::make_unique<Engine>();
-			std::unique_ptr<Engine>fr = std::make_unique<Engine>();			
-			std::shared_ptr<Engine> eng1(new Engine());
-			std::shared_ptr<Engine> gg2 = std::make_shared<engine>();
-
-			std::weak_ptr<Engine> ee = std::make_s
-
-			int i = 90;
-			int j = 902;
-
-			
-			int const* pt2  = &i;			
-			int* const pt3  = &i;
-
-			
-			ptr = const_cast<int> pt2;
-			*/
-
-
 		}
-
-		
 	}
 
 	bool Engine::OnWindowClose(WindowCloseEvent &wce)

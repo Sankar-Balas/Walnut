@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>wlpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WL_PLATFORM_WINDOWS;WL_BUILD_DLL;WL_DYNAMIC_LINK;WL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(solutiondir)common\inc;$(solutiondir)engine\inc;$(solutiondir)engine\vendor\GLFW\include\GLFW;$(solutiondir)engine\events;$(Solutiondir)logger\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WL_PLATFORM_WINDOWS;WL_BUILD_DLL;WL_DYNAMIC_LINK;WL_DEBUG;GLFW_INCLUDE_NONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(solutiondir)common\inc;$(solutiondir)engine\inc;$(solutiondir)engine\vendor\GLFW\include;$(solutiondir)engine\events;$(Solutiondir)logger\inc;$(Solutiondir)Engine\vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -206,6 +206,9 @@ XCOPY /Y "$(OutDir)*$(ProjectName).lib" "$(solutiondir)bin\Debug-windows-x86_64\
   <ItemGroup>
     <ProjectReference Include="..\Logger\Logger.vcxproj">
       <Project>{25f339c1-1195-6497-fa4f-78ebe690ebe7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\glad\glad.vcxproj">
+      <Project>{dd62977c-c999-980d-7286-7e105e9c140f}</Project>
     </ProjectReference>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>

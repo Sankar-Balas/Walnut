@@ -3,17 +3,14 @@
 #include <Log.h>
 #include "Layer.h"
 
-
 class TestLayerOne : public Walnut::Layer
 {
 public:
-	TestLayerOne()
-	{
+	TestLayerOne(){
 		WL_CORE_TRACE("Test layer Const");
 	}
 
-	~TestLayerOne()	
-	{
+	~TestLayerOne(){
 		WL_CORE_TRACE("Test layer Dest");
 	}
 
@@ -26,8 +23,8 @@ public:
 	}
 
 	void onLayerEvent(Walnut::Event &event) override {
-		WL_CORE_TRACE("Test layer onLayerEvent");
-		//event.m_handled = true;
+		event.m_handled = true; 
+		WL_CORE_TRACE("Test layer onLayerEvent");		
 	}
 };
 
@@ -35,17 +32,14 @@ public:
 class Sandbox : public Walnut::Engine
 {
 public:
-	Sandbox() 
-	{
+	Sandbox() {
 		WL_CORE_TRACE("Sandbox:Constructor");
 		PushLayer(new TestLayerOne());
 	}	
 	~Sandbox() {}
 };
 
-Walnut::Engine* Walnut::CreateApplication()
-{
+Walnut::Engine* Walnut::CreateApplication(){
 	WL_CORE_ERROR("Sandbox:CreateApplication");
 	return new Sandbox();
 }
-

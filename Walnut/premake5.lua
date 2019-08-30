@@ -13,7 +13,10 @@ workspace "Walnut"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Walnut/Engine/vendor/GLFW/include"
+IncludeDir["Glad"] = "Walnut/Engine/vendor/Glad/include"
+
 include "Engine/vendor/GLFW"
+include "Engine/vendor/Glad"
 
 project "Engine"
 	location "Engine"
@@ -41,11 +44,13 @@ project "Engine"
 	includedirs
 	{
 		"$(SolutionDir)Engine/inc",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -57,7 +62,8 @@ project "Engine"
 		{
 			"WL_PLATFORM_WINDOWS",
 			"WL_BUILD_DLL",
-			"WL_DYNAMIC_LINK"
+			"WL_DYNAMIC_LINK",
+			"GLFW_INCLUDE_NONE"
 		}		
 
 	filter "configurations:Debug"
@@ -96,6 +102,7 @@ project "SandBox"
 		"$(SolutionDir)Engine",
 		"$(SolutionDir)Engine/inc",
 		"$(SolutionDir)Logger/inc"
+		"$(SolutionDir)Common/inc"
 	}
 
 	links

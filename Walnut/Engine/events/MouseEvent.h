@@ -53,7 +53,7 @@ namespace Walnut
 		float m_xPosition;
 		float m_yPosition;
 	public:
-		MouseScrolled(int xPos, int yPos) : m_xPosition(xPos), m_yPosition(yPos) {}		
+		MouseScrolled(float xPos, float yPos) : m_xPosition(xPos), m_yPosition(yPos) {}
 		virtual int GetEventCategory()const override { return EventCategory::EventcategoryMouse | EventCategory::EventCategoryInput; }
 		inline float getXposition() const { return m_xPosition; }
 		inline float getYposition() const { return m_yPosition; }

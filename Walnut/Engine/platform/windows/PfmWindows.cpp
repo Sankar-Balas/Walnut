@@ -2,8 +2,9 @@
 
 #include "wlpch.h"
 #include "PfmWindows.h"
-#include "glfw3.h"
+#include "GLFW/glfw3.h"
 #include "Log.h"
+#include "glad/glad.h"
 
 namespace Walnut
 {
@@ -43,6 +44,7 @@ namespace Walnut
 		}
 		m_glfWindow = glfwCreateWindow((int)props.m_Width, (int)props.m_height,  props.m_Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_glfWindow);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);				
 		glfwSetWindowUserPointer(m_glfWindow, &m_WindowData);
 		SetVSync(true);
 
